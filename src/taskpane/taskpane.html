@@ -1,6 +1,3 @@
-<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
-<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
-
 <!DOCTYPE html>
 <html>
 
@@ -8,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contoso Task Pane Add-in</title>
+    <title>Kat-Man-Do</title>
 
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+    <!-- Fluent UI CSS -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
 
     <!-- Template styles -->
     <link href="taskpane.css" rel="stylesheet" type="text/css" />
@@ -23,24 +20,24 @@
 <body class="ms-font-m ms-welcome ms-Fabric">
     <header class="ms-welcome__header ms-bgColor-neutralLighter">
         <img width="90" height="90" src="../../assets/logo-filled.png" alt="Contoso" title="Contoso" />
-        <h1 class="ms-font-su">CRMANTRA</h1>
+        <h3 class="ms-font-su">Kat-Man-Do</h3>
+        <h6 class="ms-subtitle">CRMantra Catalog Manager</h6>
     </header>
     <section id="sideload-msg" class="ms-welcome__main">
-        <h2 class="ms-font-xl">Please <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">sideload</a> your add-in to see app body.</h2>
+        <h2 class="ms-font-xl"></h2>
     </section>
     <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <h2 class="ms-font-xl"> Welcome To Kat-Man-Do Add-Ins </h2>
-        
+        <h2 class="ms-font-xl">Welcome to CRMantra Catalog Manager</h2>
         <select class="form-select form-select-sm" name="authUrl" id="authUrl">
             <option value="https://login.salesforce.com">Production</option>
             <option value="https://test.salesforce.com">Sandbox</option>
-          </select>
-        <p class="ms-font-l">Modify the source files, then click Run </p>
-        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-            <span class="ms-Button-label">Run</span>
-        </div>
+        </select>
+        <!-- <button id="authorizeBtn">Authorize</button>
+        <button id="fetchDataBtn">Fetch Data</button> -->
+        <button type="button" class="btn-Authorize" id="authorize">Authorize</button>
         <p><label id="item-subject"></label></p>
     </main>
+    <script src="taskpane.js"></script>
 </body>
 
 </html>
